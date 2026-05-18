@@ -1,8 +1,8 @@
-FROM python:3.10-slim
+FROM --platform=linux/amd64 python:3.10-slim
 
 WORKDIR /app
 
-RUN pip install fastapi uvicorn httpx prometheus-fastapi-instrumentator
+RUN pip install fastapi uvicorn httpx prometheus-fastapi-instrumentator langsmith
 
 COPY main.py .
 

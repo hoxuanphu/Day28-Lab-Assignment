@@ -4,6 +4,14 @@ from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, VectorParams, PointStruct
 import os
 
+# Load env variables from .env if not already set
+if "EMBED_NGROK_URL" not in os.environ and os.path.exists(".env"):
+    with open(".env") as f:
+        for line in f:
+            if line.strip() and not line.strip().startswith("#"):
+                key, val = line.strip().split("=", 1)
+                os.environ[key.strip()] = val.strip()
+
 EMBED_URL = os.environ["EMBED_NGROK_URL"]
 qdrant = QdrantClient(host="localhost", port=6333)
 

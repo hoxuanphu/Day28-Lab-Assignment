@@ -1,0 +1,11 @@
+prefect==2.14.0
+kafka-python-ng==2.2.2
+pandas>=2.1.2
+pyarrow==14.0.0
+redis==5.0.1
+qdrant-client==1.7.0
+requests==2.31.0
+langsmith==0.0.83
+pytest==7.4.3
+griffe<1.0.0
+numpy<2
